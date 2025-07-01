@@ -1,0 +1,10 @@
+workflows:
+  swiftpm-workflow:
+    name: SwiftPM Build
+    environment:
+      vars:
+        PROJECT_DIR: .
+    scripts:
+      - name: Build Swift Package
+        script: |
+          swift build --target PrivateMarketsQuest
