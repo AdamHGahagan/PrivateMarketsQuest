@@ -1,4 +1,5 @@
 import SwiftUI
+import PlaygroundSupport
 
 struct ContentView: View {
     @State private var isLoggedIn = false
@@ -19,12 +20,6 @@ struct LoginView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Image("ey_logo")
-                .resizable()
-                .scaledToFit()
-                .frame(height: 80)
-                .padding(.top, 60)
-
             Text("Welcome to Private Markets Quest")
                 .font(.title2)
                 .fontWeight(.bold)
@@ -48,7 +43,7 @@ struct LoginView: View {
                     .foregroundColor(.white)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color("EYYellow"))
+                    .background(Color.yellow)
                     .cornerRadius(10)
             }
 
@@ -62,22 +57,10 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
-                Image("ey_logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 60)
-                    .padding(.top, 10)
-
                 Text("Private Markets Quest")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-
-                Image(systemName: "chart.bar.doc.horizontal")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 100)
-                    .foregroundColor(Color("EYYellow"))
 
                 NavigationLink(destination: LearningModuleView()) {
                     Text("Start Learning")
@@ -85,7 +68,7 @@ struct HomeView: View {
                         .foregroundColor(.white)
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(Color("EYYellow"))
+                        .background(Color.yellow)
                         .cornerRadius(12)
                 }
 
@@ -95,21 +78,20 @@ struct HomeView: View {
                         .foregroundColor(.white)
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(Color("EYGray"))
+                        .background(Color.gray)
                         .cornerRadius(12)
                 }
 
                 NavigationLink(destination: ResourcesView()) {
                     Text("Explore Resources")
                         .font(.subheadline)
-                        .foregroundColor(Color("EYDark"))
+                        .foregroundColor(Color.black)
                         .padding(.top, 10)
                 }
 
                 Spacer()
             }
             .padding()
-            .navigationBarHidden(true)
         }
     }
 }
@@ -132,12 +114,5 @@ struct ResourcesView: View {
     var body: some View {
         Text("Resources Coming Soon")
             .font(.title2)
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .preferredColorScheme(.light)
     }
 }
