@@ -1,0 +1,21 @@
+import SwiftUI
+import AVKit
+
+@available(macOS 11.0, *)
+struct IntroVideoView: View {
+    private let videoURL = URL(string: "https://cdn.synthesia.io/videos/779d5805-8ffa-4fd0-bf51-428fc6741891.mp4")!
+
+    var body: some View {
+        VStack {
+            VideoPlayer(player: AVPlayer(url: videoURL))
+                .frame(height: 300)
+                .cornerRadius(12)
+                .padding()
+
+            Text("Welcome to Private Markets Quest")
+                .font(.headline)
+                .padding()
+        }
+        .navigationTitle("Introduction")
+    }
+}
