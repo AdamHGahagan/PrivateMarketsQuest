@@ -1,0 +1,65 @@
+import SwiftUI
+
+struct HomeView: View {
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 20) {
+                Text("Private Markets Quest")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 40)
+
+                NavigationLink(destination: QuestionnaireView()) {
+                    Text("🧭 Find My Learning Path")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(12)
+                }
+
+                NavigationLink(destination: LearningModuleView()) {
+                    Text("📘 Start Learning")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(12)
+                }
+
+                NavigationLink(destination: FundBuilderView()) {
+                    Text("🏗️ Build a Fund")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.purple)
+                        .foregroundColor(.white)
+                        .cornerRadius(12)
+                }
+
+                NavigationLink(destination: ResourcesView()) {
+                    Text("🌐 Explore Resources")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.gray)
+                        .foregroundColor(.white)
+                        .cornerRadius(12)
+                }
+
+                Spacer()
+            }
+            .padding()
+            .navigationTitle("Home")
+        }
+    }
+}
+
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
+}
