@@ -8,3 +8,16 @@ workflows:
       - name: Build Swift Package
         script: |
           swift build --target PrivateMarketsQuest
+  simulator-workflow:
+    name: Build for simulator
+     vars:
+        PROJECT_DIR: .
+    scripts:
+      - name: Build with Generic Destination
+        script: |
+         swift build  --target PrivateMarketsQuest
+            -project "PrivateMarketsQuest" \
+            -sdk iphonesimulator \
+            -configuration Debug          
+    artifacts:
+      - /Users/builder/Library/Developer/Xcode/DerivedData/**/*.app
